@@ -1,0 +1,12 @@
+<ul>
+  {{#if controller.isLoaded}}
+    {{#each repo in controller}}
+      <li><a {{bindAttr href="repo.url"}}>{{repo.name}}</a>
+      <p>{{repo.description}}</p>
+      <p>Watchers: {{repo.watchers}}, Forks: {{repo.forks}}</p>
+      </li>
+    {{/each}}
+  {{else}}
+    <li><img src="/spinner.gif"> Loading trackbacks...</li>
+  {{/if}}
+</ul>
